@@ -7,8 +7,14 @@ df = df[df['Mass'].notna()]
 df = df[df['Radius'].notna()]
 df = df[df['Distance'].notna()]
 
-headers = df[0]
-planet_data = df[1:]
+# data = []
+# with open('dwarf_stars.csv', 'r') as f:
+#     csvreader = csv.reader(f)
+#     for rows in data:
+#         data.append(rows)
+
+headers = ['row_num', 'star_name', 'distance', 'mass', 'radius']
+planet_data = []
 mass = df['Mass']
 radius = df['Radius']
 star_name = df['Star_name']
@@ -32,4 +38,3 @@ with open('brown_dwarf_stars.csv', 'a+') as f:
     csvwriter = csv.writer(f)
     csvwriter.writerow(headers)
     csvwriter.writerows(planet_data)
-
